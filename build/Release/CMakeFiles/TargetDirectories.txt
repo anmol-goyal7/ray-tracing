@@ -1,0 +1,3 @@
+/home/anmol/Desktop/ray-tracing/build/Release/CMakeFiles/first_image.dir
+/home/anmol/Desktop/ray-tracing/build/Release/CMakeFiles/edit_cache.dir
+/home/anmol/Desktop/ray-tracing/build/Release/CMakeFiles/rebuild_cache.dir

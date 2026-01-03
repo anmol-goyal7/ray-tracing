@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/anmol/Desktop/ray-tracing/build/Release/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,8 @@
+# binaries
+firstimage
+*.out
+*.exe
+
+# build artifacts
+*.ppm
+

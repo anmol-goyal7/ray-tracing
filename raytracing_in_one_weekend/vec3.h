@@ -19,37 +19,38 @@ class vec3
     double z() const { return e[2]; }
 
     vec3 operator-() const { return vec3(-e[0], -e[1], -e[2]); } // this defines unary minus for a vector, reverses the value of the vector, completely allowing the vector to bounce back 180 degrees. 
-    double operator[](int i) const { return e[i]; }
-    double& operator[](int i) { return e[i]; }
+    double operator[](int i) const { return e[i]; } // via this we can read the value of the direction of the vector
+    double& operator[](int i) { return e[i]; } // and this function allows us to change the value of the vector
 
     vec3& operator+=(const vec3& v) {
         e[0] += v.e[0];
         e[1] += v.e[1];
         e[2] += v.e[2];
         return *this;
-    }
+    } // this is a member function which returns the value of "*this", here this is a pointer and we use "** to dereference it, this += is basically used to change the value of vector
 
     vec3& operator*=(double t) {
         e[0] *= t;
         e[1] *= t;
         e[2] *= t;
         return *this;
-    }
+    } // similar to above member function
 
     vec3& operator/=(double t) {
         return *this *= 1/t;
-    }
+    } // same
 
     double length() const {
         return std::sqrt(length_squared());
-    }
+    } // this is used to return the squared value of the vector, this is used for vector addition  
 
     double length_squared() const {
         return e[0]*e[0] + e[1]*e[1] + e[2]*e[2];
-    }
+    } // this is also used for vector addition
 };
 
-using point3 = vec3;
+using point3 = vec3; // used for better understanding, vec3 represents the entire vector including direction, color, point in space,
+                     // whereas, point3 represents the exact coordinates of the vector, this helps us, not the compiler.
 
 
 

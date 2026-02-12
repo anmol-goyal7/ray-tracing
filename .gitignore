@@ -1,8 +1,8 @@
-# binaries
-firstimage
-*.out
-*.exe
-
-# build artifacts
+build/
+*.o
 *.ppm
+creating_scene_rays
+firstimage
+firstimage2
+image
 

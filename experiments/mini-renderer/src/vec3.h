@@ -1,5 +1,4 @@
-#ifndef VEC3_H
-#define VEC3_H
+#pragma once
 
 class vec3
 {
@@ -13,5 +12,4 @@ public:
     double y() const {return e[1];}
     double z() const {return e[2];}
     };
-    
-#endif
+

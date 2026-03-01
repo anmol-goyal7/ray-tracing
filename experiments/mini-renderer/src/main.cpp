@@ -10,5 +10,6 @@ int main() {
   std::cout << c.x() << " "
             << c.y() << " "
             << c.z() << std::endl;
-
+  
+  std::cout <<dot(a,b) << std::endl;
 }

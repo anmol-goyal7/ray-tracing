@@ -37,5 +37,14 @@ public:
           e[1] * other.e[1],                              
           e[2] * other.e[2]                               
           );                                              
-    }                                                     
-};                                                    
+  
+    }
+};
+
+ inline double dot(const Vec3& a, const Vec3& b) {
+       return a.e[0] * b.e[0] +
+              a.e[1] * b.e[1] +
+              a.e[2] * b.e[2]; 
+     }
+
+                                                     

@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra -O2
 
-SRC = raytracing_in_one_weekend/main.cpp
+SRC = raytracing_in_one_weekend/src/main.cpp
 OUT = build/raytracer
 
 all: $(OUT)

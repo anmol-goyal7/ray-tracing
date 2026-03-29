@@ -17,7 +17,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y imagemagick
 
       - name: Compile ray tracer
-        run: g++ -std=c++17 raytracing_in_one_weekend/main.cpp -o raytracer
+        run: g++ -std=c++17 raytracing_in_one_weekend/src/main.cpp -o raytracer
 
       - name: Render image
         run: ./raytracer > renders/latest.ppm

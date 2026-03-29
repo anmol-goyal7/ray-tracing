@@ -1,8 +1,13 @@
 build/
 *.o
 *.ppm
+
+# Compiled binaries
+render
+raytracer
 creating_scene_rays
 firstimage
 firstimage2
 image
+main
 

@@ -4,9 +4,9 @@ Building a path tracer from scratch following Peter Shirley's *Ray Tracing in On
 
 ## Latest Render
 
-<update-zone>
+<!-- update-zone -->
 ![Latest Render](renders/latest.png)
-</update-zone>
+<!-- /update-zone -->
 
 ## Implemented So Far
 

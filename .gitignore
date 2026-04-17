@@ -1,13 +1,15 @@
+# Build directory
 build/
-*.o
+
+# Compilation database for LSP
+compile_commands.json
+
+# Generated images and renders folders
+renders/
+**/renders/
 *.ppm
+*.png
 
-# Compiled binaries
-render
-raytracer
-creating_scene_rays
-firstimage
-firstimage2
-image
-main
-
+# OS specific files
+.DS_Store
+Thumbs.db

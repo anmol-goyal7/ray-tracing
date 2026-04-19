@@ -23,3 +23,4 @@ if(MSVC)
 else()
     target_compile_options(raytracer PRIVATE -Wall -Wextra -Wpedantic)
 endif()
+

@@ -9,18 +9,23 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Export compile_commands.json for clangd/Neovim
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Define the executable and its source files
-add_executable(raytracer 
-    src/main.cpp
-)
+# List of targets
+set(TARGETS raytracer firstimage)
 
-# Include directories
-target_include_directories(raytracer PRIVATE include)
+# Sources
+set(RAYTRACER_SOURCES src/main.cpp)
+set(FIRSTIMAGE_SOURCES examples/firstimage.cpp)
 
-# Compiler-specific warnings for better development
-if(MSVC)
-    target_compile_options(raytracer PRIVATE /W4)
-else()
-    target_compile_options(raytracer PRIVATE -Wall -Wextra -Wpedantic)
-endif()
+# Define executables
+add_executable(raytracer ${RAYTRACER_SOURCES})
+add_executable(firstimage ${FIRSTIMAGE_SOURCES})
 
+# Include directories and flags for all targets
+foreach(target ${TARGETS})
+    target_include_directories(${target} PRIVATE include)
+    if(MSVC)
+        target_compile_options(${target} PRIVATE /W4)
+    else()
+        target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic)
+    endif()
+endforeach()

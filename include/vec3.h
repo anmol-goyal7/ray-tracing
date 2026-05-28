@@ -1,5 +1,4 @@
-#ifndef VEC3_H
-#define VEC3_H
+#pragma once 
 
 #include <cmath> //for std::sqrt 
 #include <iostream>
@@ -27,7 +26,7 @@ class vec3
         e[1] += v.e[1];
         e[2] += v.e[2];
         return *this;
-    } // this is a member function which returns the value of "*this", here this is a pointer and we use "** to dereference it, this += is basically used to change the value of vector
+    } // this is a member function which returns the value of "*this", here this is a pointer and we use "* to dereference it, this += is basically used to change the value of vector
 
     vec3& operator*=(double t) {
         e[0] *= t;
@@ -53,9 +52,9 @@ using point3 = vec3; // used for better understanding, vec3 represents the entir
                      // whereas, point3 represents the exact coordinates of the vector, this helps us, not the compiler.
 
 
-
-inline std::ostream& operator<<(std::ostream& out, const vec3& v) {
-    return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];
+// using inline to speed up the execution
+inline std::ostream& operator<<(std::ostream& out, const vec3& v) { //std::ostream& is used for displaying outputs, we use operator overloading 
+    return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2]; // 
 }
 
 inline vec3 operator+(const vec3& u, const vec3& v) {
@@ -98,4 +97,4 @@ inline vec3 unit_vector(const vec3& v) {
     return v / v.length();
 }
 
-#endif
+

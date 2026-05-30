@@ -19,7 +19,7 @@ Building a path tracer from scratch following Peter Shirley's *Ray Tracing in On
 ## Build
 
 ```
-make
+cmake --build build
 ```
 
 Compiles with `g++ -std=c++17 -O2`.

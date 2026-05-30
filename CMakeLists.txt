@@ -29,3 +29,4 @@ foreach(target ${TARGETS})
         target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic)
     endif()
 endforeach()
+

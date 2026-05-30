@@ -1,17 +1,8 @@
-# Build directory
 build/
-
-# Compilation database for LSP
 compile_commands.json
-
-# Generated images and renders folders
-renders/
-**/renders/
-*.ppm
-*.png
-
-# OS specific files
+renders/*.ppm
+!renders/*.png
+!renders/.gitkeep
 .DS_Store
 Thumbs.db
-
 .claude/

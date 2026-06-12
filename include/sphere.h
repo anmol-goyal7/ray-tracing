@@ -39,4 +39,4 @@ class sphere : public hittable {
     private:
         point3 center;
         double radius;
-}
+};

@@ -1,30 +1,27 @@
 #pragma once
 
-#include <limits>
-
-inline constexpr double infinity = std::numeric_limits<double>::infinity();
-
 class interval {
-    public:
-        double min, max;
+  public:
+    double min, max;
 
-        interval() : min(+infinity), max(-infinity) {}
-        interval(double min, double max) : min(min), max(max) {}
+    interval() : min(+infinity), max(-infinity) {} // Default interval is empty
 
-        double size() const {
-            return max - min;
-        }
+    interval(double min, double max) : min(min), max(max) {}
 
-        bool contains(double x) const {
-            return min <= x && x <= max;
-        }
+    double size() const {
+        return max - min;
+    }
 
-        bool surrounds(double x) const {
-            return min < x && x < max;
-        }
+    bool contains(double x) const {
+        return min <= x && x <= max;
+    }
 
-        static const interval empty, universe;
+    bool surrounds(double x) const {
+        return min < x && x < max;
+    }
+
+    static const interval empty, universe;
 };
 
-inline const interval interval::empty = interval(+infinity, -infinity);
-inline const interval interval::universe = interval(-infinity, +infinity);
+const interval interval::empty    = interval(+infinity, -infinity);
+const interval interval::universe = interval(-infinity, +infinity);

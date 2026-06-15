@@ -19,18 +19,19 @@ Building a path tracer from scratch following Peter Shirley's *Ray Tracing in On
 ## Build
 
 ```
+cmake -S . -B build
 cmake --build build
 ```
 
-Compiles with `g++ -std=c++17 -O2`.
+Compiles with `g++ -std=c++17 -O2` through CMake.
 
 ## Render
 
 ```
-make render
+./build/raytracer > renders/latest.ppm
 ```
 
-Outputs to `renders/latest.ppm` and converts to `renders/latest.png` (requires ImageMagick `convert`).
+Outputs a PPM image to `renders/latest.ppm`. Convert it to PNG with ImageMagick if needed.
 
 ## Clean
 

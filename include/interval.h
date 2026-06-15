@@ -1,5 +1,9 @@
 #pragma once
 
+#include <limits>
+
+inline constexpr double infinity = std::numeric_limits<double>::infinity();
+
 class interval {
   public:
     double min, max;
@@ -23,5 +27,5 @@ class interval {
     static const interval empty, universe;
 };
 
-const interval interval::empty    = interval(+infinity, -infinity);
-const interval interval::universe = interval(-infinity, +infinity);
+inline const interval interval::empty    = interval(+infinity, -infinity);
+inline const interval interval::universe = interval(-infinity, +infinity);

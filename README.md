@@ -28,10 +28,11 @@ Compiles with `g++ -std=c++17 -O2` through CMake.
 ## Render
 
 ```
-./build/raytracer > renders/latest.ppm
+./build/raytracer > renders/output.ppm
+convert renders/output.ppm renders/output.png
 ```
 
-Outputs a PPM image to `renders/latest.ppm`. Convert it to PNG with ImageMagick if needed.
+Outputs a PPM image to `renders/output.ppm` and converts it to the PNG shown above. The GitHub Actions workflow refreshes `renders/output.png` automatically after rendering-related changes are pushed to `main`.
 
 ## Clean
 

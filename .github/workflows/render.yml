@@ -1,0 +1,51 @@
+name: Update latest render
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "CMakeLists.txt"
+      - "include/**"
+      - "src/**"
+      - ".github/workflows/render.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Render PPM
+        run: ./build/raytracer > renders/output.ppm
+
+      - name: Convert to PNG
+        run: |
+          if command -v magick >/dev/null 2>&1; then
+            magick renders/output.ppm renders/output.png
+          else
+            convert renders/output.ppm renders/output.png
+          fi
+
+      - name: Commit updated render
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add renders/output.png
+          git diff --cached --quiet || git commit -m "Update latest render"
+          git push

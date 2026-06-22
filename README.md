@@ -5,7 +5,7 @@ Building a path tracer from scratch following Peter Shirley's *Ray Tracing in On
 ## Latest Render
 
 <!-- update-zone -->
-![Latest Render](renders/sphere_with_ground.png)
+![Latest Render](renders/antialiasing_image.png)
 <!-- /update-zone -->
 
 ## Implemented So Far

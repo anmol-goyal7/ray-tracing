@@ -1,5 +1,6 @@
 #pragma once
 
+#include <random>
 #include <cstdlib>
 #include <cmath>
 #include <iostream>
@@ -15,14 +16,16 @@ inline double degrees_to_radius(double degrees) {
 }
 
 inline double random_double() {
-    //returns a random real number in (0,1).
-    return std::rand() / (RAND_MAX + 1.0);
+    static std::uniform_real_distribution<double> distribution(0.0, 1.0);
+    static std::mt19937 generator;
+    return distribution(generator);
 }
 
 inline double random_double(double min, double max) {
     return min + (max - min) * random_double();
 }
-#include "color.h"
+
 #include "ray.h"
+#include "color.h"
 #include "vec3.h"
 #include "interval.h"

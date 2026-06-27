@@ -5,7 +5,7 @@ Building a path tracer from scratch following Peter Shirley's *Ray Tracing in On
 ## Latest Render
 
 <!-- update-zone -->
-![Latest Render](renders/diffuse_sphere4.png)
+![Latest Render](renders/shiny_metal.png)
 <!-- /update-zone -->
 
 ## Implemented So Far

@@ -5,7 +5,7 @@ Building a path tracer from scratch following Peter Shirley's *Ray Tracing in On
 ## Latest Render
 
 <!-- update-zone -->
-![Latest Render](renders/spheres_with_depth_of_field.png)
+![Latest Render](renders/final_view.png)
 <!-- /update-zone -->
 
 ## Implemented So Far

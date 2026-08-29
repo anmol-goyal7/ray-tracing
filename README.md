@@ -5,7 +5,7 @@ Completed path tracer built from scratch following Peter Shirley's *Ray Tracing 
 ## Final Render
 
 <!-- update-zone -->
-![Final Render](renders/final_view.png)
+![Latest Render](renders/wide_ange_view.png)
 <!-- /update-zone -->
 
 ## Features

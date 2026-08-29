@@ -1,0 +1,43 @@
+name: Show latest render in README
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "renders/**.png"
+      - "scripts/update-latest-render.sh"
+      - ".github/workflows/latest-render.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-latest-render
+  cancel-in-progress: false
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Point README at the latest render
+        run: ./scripts/update-latest-render.sh
+
+      - name: Commit README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "README already shows the latest render."
+            exit 0
+          fi
+          git commit -m "Show latest render in README"
+          git push || (git pull --rebase && git push)

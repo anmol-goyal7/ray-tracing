@@ -2,11 +2,21 @@
 
 Completed path tracer built from scratch following Peter Shirley's *Ray Tracing in One Weekend*.
 
-## Final Render
+## Latest Render
 
 <!-- update-zone -->
-![Latest Render](renders/wide_ange_view.png)
+![Latest Render](renders/output.png)
+
+*`renders/output.png` -- updated 2026-08-29*
 <!-- /update-zone -->
+
+That block is generated. Commit a new PNG under `renders/` and push to `main`, and
+[`latest-render.yml`](.github/workflows/latest-render.yml) rewrites it to show that image. To refresh
+it yourself before committing:
+
+```
+./scripts/update-latest-render.sh
+```
 
 ## Features
 
@@ -33,7 +43,7 @@ Compiles with `g++ -std=c++17 -O2` through CMake.
 ./build/raytracer > renders/output.ppm && magick renders/output.ppm renders/output.png
 ```
 
-Outputs a PPM image and converts it to PNG. The GitHub Actions workflow refreshes `renders/final_view.png` automatically after rendering-related changes are pushed to `main`.
+Outputs a PPM image and converts it to PNG. The GitHub Actions workflow refreshes `renders/output.png` automatically after rendering-related changes are pushed to `main`, and the README follows it.
 
 ## Clean
 

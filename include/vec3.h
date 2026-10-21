@@ -42,11 +42,11 @@ class vec3
 
     double length() const {
         return std::sqrt(length_squared());
-    } // this is used to return the squared value of the vector, this is used for vector addition  
+    } // the vector's length (magnitude): the square root of length_squared()
 
     double length_squared() const {
         return e[0]*e[0] + e[1]*e[1] + e[2]*e[2];
-    } // this is also used for vector addition
+    } // x^2 + y^2 + z^2; cheaper than length() when only comparing sizes
 
     bool near_zero() const {
         // Return true if the vector is close to zero in all dimensions.
@@ -125,7 +125,7 @@ inline vec3 random_unit_vector() {
         auto p = vec3::random(-1,1);
         auto lensq = p.length_squared();
         if (1e-160 < lensq && lensq <= 1)
-            return p / sqrt(lensq);
+            return p / std::sqrt(lensq);
     }
 }
 

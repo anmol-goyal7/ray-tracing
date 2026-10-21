@@ -5,9 +5,9 @@ currently on the second book "ray tracing the next week"
 ## latest render
 
 <!-- update-zone -->
-![Latest Render](renders/wide_angle_view.png)
+![Latest Render](renders/output.png)
 
-*`renders/wide_angle_view.png` -- updated 2026-10-21*
+*`renders/output.png` -- updated 2026-08-29*
 <!-- /update-zone -->
 
 ## features

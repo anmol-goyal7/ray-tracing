@@ -2,7 +2,7 @@
 
 #include <cmath> //for std::sqrt 
 #include <iostream>
-#include "rtweekend.h"
+#include "random.h"
 
 class vec3 
 {
